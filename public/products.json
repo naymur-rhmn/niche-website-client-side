@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "title": "White Classic",
+        "pd_code": "CS5",
+        "price": 600,
+        "last_price": 644,
+        "img_main": "https://i.ibb.co/c6vCRfw/img4.jpg",
+        "img": "https://i.ibb.co/T4kr8KW/cycle-5.jpg",
+        "description": "Light-weight, classic looking, city bike with 8-speeds. Smaller 650c wheels and a flat handlebar make for a quick but comfortable ride."
+    },
+    {
+        "id": 2,
+        "title": "White CS",
+        "pd_code": "WS5",
+        "price": 612,
+        "last_price": 629,
+        "img_main": "https://i.ibb.co/HHmjkBj/img13.jpg",
+        "img": "https://i.ibb.co/pZ9bMxc/cycle-4.jpg",
+        "description": "Light-weight, classic looking, city bike with 8-speeds. Smaller 650c wheels and a flat handlebar make for a quick but comfortable ride."
+    },
+    {
+        "id": 3,
+        "title": "Purple DB",
+        "pd_code": "PS9",
+        "price": 549,
+        "last_price": 679,
+        "img_main": "https://i.ibb.co/pK5MK20/img10.jpg",
+        "img": "https://i.ibb.co/rMw9ycD/cycle-3.jpg",
+        "description": "Light-weight, classic looking, city bike with 8-speeds. Smaller 650c wheels and a flat handlebar make for a quick but comfortable ride."
+    },
+    {
+        "id": 4,
+        "title": "Yellow CS",
+        "pd_code": "YS2",
+        "price": 522,
+        "last_price": 587,
+        "img_main": "https://i.ibb.co/NmrW9qN/img8.jpg",
+        "img": "https://i.ibb.co/yBS6DFm/cycle-2.jpg",
+        "description": "Light-weight, classic looking, city bike with 8-speeds. Smaller 650c wheels and a flat handlebar make for a quick but comfortable ride."
+    },
+    {
+        "id": 5,
+        "title": "Brown CS",
+        "pd_code": "BS1",
+        "price": 599,
+        "last_price": 649,
+        "img_main": "https://i.ibb.co/FKmrGtD/img3.jpg",
+        "img": "https://i.ibb.co/rdqg1Fk/cycle-1.jpg",
+        "description": "Light-weight, classic looking, city bike with 8-speeds. Smaller 650c wheels and a flat handlebar make for a quick but comfortable ride."
+    },
+    {
+        "id": 6,
+        "title": "White CS",
+        "pd_code": "WS4",
+        "price": 555,
+        "last_price": 599,
+        "img_main": "https://i.ibb.co/6BJF1Dx/img1.jpg",
+        "img": "https://i.ibb.co/rMw9ycD/cycle-3.jpg",
+        "description": "Light-weight, classic looking, city bike with 8-speeds. Smaller 650c wheels and a flat handlebar make for a quick but comfortable ride."
+    },
+    {
+        "id": 7,
+        "title": "Mustard Sport",
+        "pd_code": "MS5",
+        "price": 610,
+        "last_price": 655,
+        "img_main": "https://i.ibb.co/BBqFgHK/lightgreen.jpg",
+        "img": "https://i.ibb.co/pZ9bMxc/cycle-4.jpg",
+        "description": "Light-weight, classic looking, city bike with 8-speeds. Smaller 650c wheels and a flat handlebar make for a quick but comfortable ride."
+    },
+    {
+        "id": 8,
+        "title": "Blue CS",
+        "pd_code": "BS7",
+        "price": 625,
+        "last_price": 644,
+        "img_main": "https://i.ibb.co/HHmjkBj/img13.jpg",
+        "img": "https://i.ibb.co/YW9Xy9q/cycle-8.jpg",
+        "description": "Light-weight, classic looking, city bike with 8-speeds. Smaller 650c wheels and a flat handlebar make for a quick but comfortable ride."
+    },
+    {
+        "id": 9,
+        "title": "Pink Biframes",
+        "pd_code": "PS5",
+        "price": 590,
+        "last_price": 600,
+        "img_main": "https://i.ibb.co/Wg05JmM/img11.jpg",
+        "img": "https://i.ibb.co/N9k9WKX/cycle-7.jpg",
+        "description": "Light-weight, classic looking, city bike with 8-speeds. Smaller 650c wheels and a flat handlebar make for a quick but comfortable ride."
+    },
+    {
+        "id": 10,
+        "title": "Blue Biframes",
+        "pd_code": "BS9",
+        "price": 588,
+        "last_price": 612,
+        "img_main": "https://i.ibb.co/pK5MK20/img10.jpg",
+        "img": "https://i.ibb.co/gTKS27n/cycle-6.jpg",
+        "description": "Light-weight, classic looking, city bike with 8-speeds. Smaller 650c wheels and a flat handlebar make for a quick but comfortable ride."
+    }
+]
