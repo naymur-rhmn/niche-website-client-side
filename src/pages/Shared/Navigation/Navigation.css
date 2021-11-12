@@ -1,0 +1,8 @@
+
+.custom {
+    color: white ;
+}
+.custom:hover{
+    color: #FFAA16;
+    transition: .3s;
+}

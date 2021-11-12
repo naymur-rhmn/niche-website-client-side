@@ -15,23 +15,20 @@ const HomeProducts = () => {
 
     return (
 
-        <Box style={{ backgroundColor: '#EBEBEB', padding: "30px 0" }}>
+        <Box style={{ backgroundColor: '#EBEBEB', padding: "90px 0" }}>
             <Container>
-                <Box sx={{ textAlign: 'center' }}>
-                    <Typography variant="h4" >
+                <Box sx={{ textAlign: 'center', marginBottom: 8 }}>
+                    <Typography sx={{ fontWeight: 'bold' }} variant="h4" >
                         NEW PRODUCTS
                     </Typography>
-                    <Typography color="skyblue" sx={{ marginTop: -2 }} variant="h4" >
-                        ---------
-                    </Typography>
-                    <Typography variant="body2" >
+                    <Typography sx={{ padding: '0 5%' }} variant="body1" >
                         Check out what’s going on in the store. Hurry up! Bestsellers often sold out in couples of weeks.
                     </Typography>
                 </Box>
 
                 <Grid container spacing={2}>
                     {
-                        products.map(product => <HomeProduct key={product.id} product={product} />)
+                        products.map(product => <HomeProduct key={product._id} product={product} />)
                     }
                 </Grid>
             </Container>

@@ -11,13 +11,11 @@ const ExploreProducts = () => {
             .then(data => setProducts(data))
     }, [])
     return (
-        <Container>
+        <Container sx={{ padding: '60px 0', marginBottom: 6 }}>
             <Grid container spacing={3}>
                 {
                     products.map(product => <HomeProduct key={product._id} product={product}></HomeProduct>)
                 }
-
-                {/*  */}
             </Grid>
         </Container>
     );

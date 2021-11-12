@@ -6,22 +6,49 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-
+import MyOrder from '../../Order/MyOrder/MyOrder';
+import Payment from '../Payment/Payment';
+import ManageOrder from '../ManageOrder/ManageOrder';
+import AddProduct from '../AddProduct/AddProduct';
+import {
+    Switch,
+    Route,
+    Link,
+    useRouteMatch
+} from "react-router-dom";
+import ManageProducts from '../ManageProducts/ManageProducts';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import HomeIcon from '@mui/icons-material/Home';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import PaymentsIcon from '@mui/icons-material/Payments';
+import ReviewsIcon from '@mui/icons-material/Reviews';
+import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import StoreIcon from '@mui/icons-material/Store';
+import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
+import PersonIcon from '@mui/icons-material/Person';
+import useAuth from '../../hooks/useAuth';
+import { useHistory } from 'react-router-dom';
 const drawerWidth = 240;
 
 function Dashboard(props) {
+    const { logOut, admin } = useAuth();
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    let { path, url } = useRouteMatch();
+    const history = useHistory();
 
+
+    const handleLogout = () => {
+        logOut(history)
+    }
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -31,54 +58,93 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <List>
-                <ListItem button >
+                {
+                    !admin ?
+                        <Box>
+                            <Link style={{ textDecoration: 'none', color: '#707070' }} to='/'>
+                                <ListItem button >
+                                    <ListItemIcon>
+                                        <HomeIcon />
+                                    </ListItemIcon>
+                                    <ListItemText>Home</ListItemText>
+                                </ListItem>
+                            </Link>
+                            <Link style={{ textDecoration: 'none', color: '#707070' }} to={`${url}`}>
+                                <ListItem button >
+                                    <ListItemIcon>
+                                        <ShoppingBagIcon />
+                                    </ListItemIcon>
+                                    <ListItemText>My Orders</ListItemText>
+                                </ListItem>
+                            </Link>
+
+                            <Link style={{ textDecoration: 'none', color: '#707070' }} to={`${url}/payment`}>
+                                <ListItem button >
+                                    <ListItemIcon>
+                                        <PaymentsIcon />
+                                    </ListItemIcon>
+                                    <ListItemText>Payment</ListItemText>
+                                </ListItem>
+                            </Link>
+
+                            <Link style={{ textDecoration: 'none', color: '#707070' }} to={`${url}/reviews`}>
+                                <ListItem button >
+                                    <ListItemIcon>
+                                        <ReviewsIcon />
+                                    </ListItemIcon>
+                                    <ListItemText>Reviews</ListItemText>
+                                </ListItem>
+                            </Link>
+                        </Box>
+                        :
+                        <Box>
+                            <Link style={{ textDecoration: 'none', color: '#707070' }} to={`${url}/manageAllOrders`}>
+                                <ListItem button >
+                                    <ListItemIcon>
+                                        <ConfirmationNumberIcon />
+                                    </ListItemIcon>
+                                    <ListItemText>Manage All Orders</ListItemText>
+                                </ListItem>
+                            </Link>
+
+                            <Link style={{ textDecoration: 'none', color: '#707070' }} to={`${url}/addProduct`}>
+                                <ListItem button >
+                                    <ListItemIcon>
+                                        <StorefrontIcon />
+                                    </ListItemIcon>
+                                    <ListItemText>Add a product</ListItemText>
+                                </ListItem>
+                            </Link>
+
+                            <Link style={{ textDecoration: 'none', color: '#707070' }} to={`${url}/manageProducts`}>
+                                <ListItem button >
+                                    <ListItemIcon>
+                                        <StoreIcon />
+                                    </ListItemIcon>
+                                    <ListItemText>Manage Products</ListItemText>
+                                </ListItem>
+                            </Link>
+
+                            <Link style={{ textDecoration: 'none', color: '#707070' }} to={`${url}/makeAdmin`}>
+                                <ListItem button >
+                                    <ListItemIcon>
+                                        <SupervisorAccountIcon />
+                                    </ListItemIcon>
+                                    <ListItemText>Make Admin</ListItemText>
+                                </ListItem>
+                            </Link>
+                        </Box>
+                }
+
+
+
+                <ListItem onClick={handleLogout} button >
                     <ListItemIcon>
-                        <InboxIcon />
-                    </ListItemIcon>
-                    <ListItemText>My Orders</ListItemText>
-                </ListItem>
-                <ListItem button >
-                    <ListItemIcon>
-                        <InboxIcon />
-                    </ListItemIcon>
-                    <ListItemText>Pay Money</ListItemText>
-                </ListItem>
-                <ListItem button >
-                    <ListItemIcon>
-                        <InboxIcon />
-                    </ListItemIcon>
-                    <ListItemText>Reviews</ListItemText>
-                </ListItem>
-                <ListItem button >
-                    <ListItemIcon>
-                        <InboxIcon />
-                    </ListItemIcon>
-                    <ListItemText>Manage All Orders</ListItemText>
-                </ListItem>
-                <ListItem button >
-                    <ListItemIcon>
-                        <InboxIcon />
-                    </ListItemIcon>
-                    <ListItemText>Add a product</ListItemText>
-                </ListItem>
-                <ListItem button >
-                    <ListItemIcon>
-                        <InboxIcon />
-                    </ListItemIcon>
-                    <ListItemText>Manage Products</ListItemText>
-                </ListItem>
-                <ListItem button >
-                    <ListItemIcon>
-                        <InboxIcon />
-                    </ListItemIcon>
-                    <ListItemText>Make Admin</ListItemText>
-                </ListItem>
-                <ListItem button >
-                    <ListItemIcon>
-                        <InboxIcon />
+                        <PersonIcon />
                     </ListItemIcon>
                     <ListItemText>Log Out</ListItemText>
                 </ListItem>
+
             </List>
         </div>
     );
@@ -147,9 +213,31 @@ function Dashboard(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
-                <Box>
-                    hello
-                </Box>
+
+
+                <Switch>
+                    <Route exact path={path}>
+                        <MyOrder></MyOrder>
+                    </Route>
+                    <Route path={`${path}/payment`}>
+                        <Payment></Payment>
+                    </Route>
+                    <Route path={`${path}/reviews`}>
+
+                    </Route>
+                    <Route path={`${path}/manageAllOrders`}>
+                        <ManageOrder></ManageOrder>
+                    </Route>
+                    <Route path={`${path}/addProduct`}>
+                        <AddProduct></AddProduct>
+                    </Route>
+                    <Route path={`${path}/manageProducts`}>
+                        <ManageProducts></ManageProducts>
+                    </Route>
+                    <Route path={`${path}/makeAdmin`}>
+                        <MakeAdmin></MakeAdmin>
+                    </Route>
+                </Switch>
             </Box>
         </Box>
     );

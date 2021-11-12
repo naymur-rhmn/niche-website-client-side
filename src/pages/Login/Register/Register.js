@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
-    const { user, googleSignIn, signUpUsingEmail } = useAuth();
+    const { user, googleSignIn, signUpUsingEmail, error } = useAuth();
     const [userData, setUserData] = useState({});
     const history = useHistory();
 
@@ -17,16 +17,16 @@ const Register = () => {
         setUserData(newValue);
     }
 
+    // email register
     const handleEmailRegister = e => {
         e.preventDefault()
         if (userData.password !== userData.password2) {
             return;
         }
-        signUpUsingEmail(userData.email, userData.password, userData.name)
+        signUpUsingEmail(userData.email, userData.password, userData.name, history)
 
     }
-
-
+    // google sign in
     const handleGoogleSignIn = () => {
         googleSignIn(history);
     }
@@ -86,7 +86,8 @@ const Register = () => {
                         variant="filled"
                         required
                     />
-                    <Button sx={{ marginTop: 2 }} type="submit" variant="contained">Log In</Button>
+                    {error && <Typography align='center' color="red">{error}</Typography>}
+                    <Button size='large' sx={{ marginTop: 2 }} type="submit" variant="contained">Register</Button>
                 </form>
                 <Link style={{ margin: '10px', display: 'inline-block' }} to='/login'><Typography variant="body2">Already a User? Please Login</Typography></Link>
                 <Divider sx={{ width: '50%', margin: '0 auto', marginBottom: '2px' }} />

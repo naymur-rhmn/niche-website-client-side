@@ -1,10 +1,10 @@
-import { Box, TextField, Typography, Button, Divider } from '@mui/material';
+import { Box, TextField, Typography, Button, Divider, Alert } from '@mui/material';
 import React, { useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
-    const { user, googleSignIn, emailSignIn } = useAuth();
+    const { user, googleSignIn, emailSignIn, error } = useAuth();
     const [userData, setUserData] = useState({});
     const history = useHistory();
     const location = useLocation();
@@ -17,7 +17,6 @@ const Login = () => {
         newValue[type] = value;
         setUserData(newValue);
     }
-
 
     // google sign in
     const handleGoogleSignIn = () => {
@@ -59,7 +58,8 @@ const Login = () => {
                         autoComplete="current-password"
                         variant="filled"
                     />
-                    <Button sx={{ marginTop: 2 }} type="submit" variant="contained">Log In</Button>
+                    {error && <Alert severity="error">{error}</Alert>}
+                    <Button size='large' sx={{ marginTop: 2 }} type="submit" variant="contained">Log In</Button>
                 </form>
 
                 <Link style={{ margin: '10px', display: 'inline-block' }} to='/register'><Typography variant="body2">Have no Account? Please Register</Typography></Link>

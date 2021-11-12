@@ -25,14 +25,12 @@ const Order = () => {
         const newValue = { ...orderData };
         newValue[type] = value;
         setOrderData(newValue);
-        console.log(newValue);
     }
 
 
     const handleOrder = (e) => {
         e.preventDefault();
-        const orderInfo = { pdId: productId, name: user.displayName, email: user.email, status: "Pending", ...orderData };
-        console.log(orderInfo);
+        const orderInfo = { pdId: productId, title: product.title, img: product.img_main, model: product.pd_code, userName: user.displayName, price: product.price, email: user.email, status: "Pending", ...orderData };
 
         fetch('http://localhost:5000/order', {
             method: 'POST',
@@ -53,7 +51,7 @@ const Order = () => {
     return (
         <>
             <Navigation></Navigation>
-            {confirmation && <Typography align="center"><Alert fullWidth severity="success">This is a success alert — check it out!</Alert></Typography>}
+            {confirmation && <Alert severity="success">This is a success alert — check it out!</Alert>}
             <Box sx={{ mx: '28px' }}>
                 <Grid container spacing={2}>
                     <Grid item lg={9} md={8} sm={12} xs={12}>
@@ -72,7 +70,7 @@ const Order = () => {
                                     ${product.price}
                                 </Typography>
                                 <Box>
-                                    <Typography>
+                                    <Typography variant="body1">
                                         {product.description}
                                     </Typography>
                                 </Box>
@@ -123,7 +121,7 @@ const Order = () => {
                                     onBlur={getInput}
 
                                 />
-                                <Button type="submit" fullWidth variant="contained">Order now</Button>
+                                <Button style={{ width: '100%' }} type="submit" variant="contained">Order now</Button>
                             </form>
                         </Box>
                     </Grid>
