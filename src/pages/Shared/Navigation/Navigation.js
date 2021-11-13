@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Container, Nav, Navbar } from "react-bootstrap";
 import Button from 'react-bootstrap/Button'
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import mountainLogo from '../../../images/logo_mountain_bike.png'
 import useAuth from '../../hooks/useAuth';
 import './Navigation.css'
@@ -12,7 +12,9 @@ const Navigation = () => {
     return (
         <Navbar style={{ backgroundColor: '#222222' }} expand="lg">
             <Container fluid className="mx-3">
-                <Navbar.Brand style={{ display: 'flex', alignItems: 'center' }} href="#home"><img className="img-fluid" style={{ maxWidth: '100px', maxHeight: '25px' }} src={mountainLogo} alt="" /><span style={{ fontWeight: 'bold', fontSize: '30px', margin: '0', padding: '0', color: '#FFFFFF' }}>MOUNTAINBIKE</span></Navbar.Brand>
+                <Link to='/'>
+                    <Navbar.Brand style={{ display: 'flex', alignItems: 'center' }} href="#home"><img className="img-fluid" style={{ maxWidth: '100px', maxHeight: '25px' }} src={mountainLogo} alt="" /><span style={{ fontWeight: 'bold', fontSize: '30px', margin: '0', padding: '0', color: '#FFFFFF' }}>MOUNTAINBIKE</span></Navbar.Brand>
+                </Link>
 
                 <div className="d-none d-lg-block d-md-block" style={{ width: '25%' }}></div>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
