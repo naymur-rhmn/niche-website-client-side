@@ -46,19 +46,19 @@ const Footer = () => {
                                     <Typography color="#FFB800" variant="h6">ABOUT US</Typography>
                                     <List>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>About Us</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>About Us</Link>
                                         </ListItem>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>Contact Us</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>Contact Us</Link>
                                         </ListItem>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>Blog</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>Blog</Link>
                                         </ListItem>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>Order history</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>Order history</Link>
                                         </ListItem>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>Terms & Condition</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>Terms & Condition</Link>
                                         </ListItem>
                                     </List>
                                 </Grid>
@@ -66,13 +66,13 @@ const Footer = () => {
                                     <Typography color="#FFB800" variant="h6">CUSTOMER SERVICE</Typography>
                                     <List>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>Shipping Policy</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>Shipping Policy</Link>
                                         </ListItem>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>Compensation First</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>Compensation First</Link>
                                         </ListItem>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>Delivery Information</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>Delivery Information</Link>
                                         </ListItem>
 
                                     </List>
@@ -85,19 +85,19 @@ const Footer = () => {
                                     <Typography color="#FFB800" variant="h6">Menu</Typography>
                                     <List>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>Home</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>Home</Link>
                                         </ListItem>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>Services</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>Services</Link>
                                         </ListItem>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>Shop</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>Shop</Link>
                                         </ListItem>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>Blog</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>Blog</Link>
                                         </ListItem>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>Contact</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>Contact</Link>
                                         </ListItem>
 
                                     </List>
@@ -106,13 +106,13 @@ const Footer = () => {
                                     <Typography color="#FFB800" variant="h6">Services</Typography>
                                     <List>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>Bike Repair</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>Bike Repair</Link>
                                         </ListItem>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>Bike Fitting</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>Bike Fitting</Link>
                                         </ListItem>
                                         <ListItem sx={{ fontWeight: '500', paddingLeft: 0 }}>
-                                            <Link style={{ color: '#F7F7F7', textDecoration: 'none' }}>Bike Rentel</Link>
+                                            <Link to='/home' style={{ color: '#F7F7F7', textDecoration: 'none' }}>Bike Rentel</Link>
                                         </ListItem>
 
                                     </List>

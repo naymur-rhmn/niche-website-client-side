@@ -1,4 +1,4 @@
-import { Container, Divider, Grid, Typography } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import HomeProduct from '../HomeProduct.js/HomeProduct';
@@ -8,7 +8,7 @@ const HomeProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://ancient-basin-83605.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data.slice(0, 6)))
     }, [])

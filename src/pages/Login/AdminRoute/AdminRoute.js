@@ -4,8 +4,8 @@ import React from 'react';
 import { Redirect, Route } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 
-const PrivateRoute = ({ children, ...rest }) => {
-    const { user, loading } = useAuth()
+const AdminRoute = ({ children, ...rest }) => {
+    const { user, loading, admin } = useAuth()
     if (loading) {
         return (
             <Box style={{ height: '100vh', display: 'flex', justifyContent: 'center' }}>
@@ -17,12 +17,12 @@ const PrivateRoute = ({ children, ...rest }) => {
         <Route
             {...rest}
             render={({ location }) =>
-                user.email ? (
+                user.email && admin ? (
                     children
                 ) : (
                     <Redirect
                         to={{
-                            pathname: "/login",
+                            pathname: "/dashboard",
                             state: { from: location }
                         }}
                     />
@@ -32,4 +32,4 @@ const PrivateRoute = ({ children, ...rest }) => {
     );
 };
 
-export default PrivateRoute;
+export default AdminRoute;

@@ -1,8 +1,8 @@
 import { Typography, Container, Grid, Paper } from '@mui/material';
-import { Box, typography } from '@mui/system';
+import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
-import { makeStyles, styled } from '@mui/styles';
-import { ClassNames } from '@emotion/react';
+import { makeStyles } from '@mui/styles';
+import Rating from 'react-rating';
 
 
 const useStyles = makeStyles({
@@ -23,7 +23,7 @@ const Review = () => {
     const classes = useStyles();
 
     useEffect(() => {
-        fetch('./review.json')
+        fetch('https://ancient-basin-83605.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
@@ -39,7 +39,7 @@ const Review = () => {
             <Container sx={{ paddingLeft: '16px', paddingRight: '16px' }}>
                 <Box sx={{ paddingTop: 10, paddingBottom: 10 }}>
                     <Box sx={{ textAlign: 'center', padding: '0 30px', marginBottom: 8 }}>
-                        <Typography color="#FFB800" sx={{ fontWeight: 'bold' }} variant="h3">
+                        <Typography color="white" sx={{ fontWeight: 'bold' }} variant="h3">
                             Why Our Customer Love MountainBike
                         </Typography>
                         <Typography color="lightGray" sx={{ padding: '0 4%' }} variant="body1">
@@ -53,11 +53,19 @@ const Review = () => {
                             reviews.map(review => (
                                 <Grid key={review.name} item lg={4} md={4} sm={6} xs={12}>
                                     <Box>
-                                        <Paper sx={{ padding: 2, backgroundColor: '#EBEBEB', marginBottom: 1 }}>
+                                        <Paper style={{ minHeight: '200px' }} sx={{ padding: 2, backgroundColor: '#EBEBEB', marginBottom: 1 }}>
                                             <Typography>
-                                                {review.message}
+                                                {review.comment}
                                             </Typography>
                                         </Paper>
+                                        <Box style={{ textAlign: 'center', marginTop: 5, color: '#FFB800' }}>
+                                            <Rating
+                                                emptySymbol={['far fa-star']}
+                                                fullSymbol={['fas fa-star']}
+                                                initialRating={review.ratings}
+                                                readonly
+                                            />
+                                        </Box>
                                         <Typography color="white" align="center" variant="h6">{review.name}</Typography>
                                         <Typography color="green" align="center" variant="body2">{review.profession}</Typography>
                                     </Box>

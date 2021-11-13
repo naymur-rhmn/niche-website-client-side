@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Container, Nav, Navbar } from "react-bootstrap";
 import Button from 'react-bootstrap/Button'
 import { NavLink } from 'react-router-dom';
-import mountain from '../../../images/mountainride.png'
 import mountainLogo from '../../../images/logo_mountain_bike.png'
 import useAuth from '../../hooks/useAuth';
 import './Navigation.css'
@@ -29,20 +28,20 @@ const Navigation = () => {
                             color: "#FFAA16"
                         }}>EXPLORE</NavLink>
 
-                        <NavLink className="fw-bold mx-2 text-decoration-none custom" to='/EXPLORE' activeStyle={{
+                        {/* <NavLink className="fw-bold mx-2 text-decoration-none custom" to="" activeStyle={{
                             fontWeight: "bold",
                             color: "#FFAA16"
-                        }}>SHOP</NavLink>
+                        }}>SHOP</NavLink> */}
 
-                        <NavLink className="fw-bold mx-2 text-decoration-none custom" to='/home' activeStyle={{
+                        {/* <NavLink className="fw-bold mx-2 text-decoration-none custom" to='' activeStyle={{
                             fontWeight: "bold",
                             color: "#FFAA16"
                         }}>NEWS</NavLink>
 
-                        <NavLink className="fw-bold mx-2 text-decoration-none custom" to='/home' activeStyle={{
+                        <NavLink className="fw-bold mx-2 text-decoration-none custom" to='' activeStyle={{
                             fontWeight: "bold",
                             color: "#FFAA16"
-                        }}>CONTACT</NavLink>
+                        }}>CONTACT</NavLink> */}
 
                         {
                             user.email && <NavLink className="fw-bold mx-2 text-decoration-none custom" to='/dashboard' activeStyle={{

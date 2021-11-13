@@ -36,6 +36,8 @@ import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 import PersonIcon from '@mui/icons-material/Person';
 import useAuth from '../../hooks/useAuth';
 import { useHistory } from 'react-router-dom';
+import AddReview from '../AddReview/AddReview';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 const drawerWidth = 240;
 
 function Dashboard(props) {
@@ -58,17 +60,17 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <List>
+                <Link style={{ textDecoration: 'none', color: '#707070' }} to='/'>
+                    <ListItem button >
+                        <ListItemIcon>
+                            <HomeIcon />
+                        </ListItemIcon>
+                        <ListItemText>Home</ListItemText>
+                    </ListItem>
+                </Link>
                 {
                     !admin ?
                         <Box>
-                            <Link style={{ textDecoration: 'none', color: '#707070' }} to='/'>
-                                <ListItem button >
-                                    <ListItemIcon>
-                                        <HomeIcon />
-                                    </ListItemIcon>
-                                    <ListItemText>Home</ListItemText>
-                                </ListItem>
-                            </Link>
                             <Link style={{ textDecoration: 'none', color: '#707070' }} to={`${url}`}>
                                 <ListItem button >
                                     <ListItemIcon>
@@ -83,7 +85,7 @@ function Dashboard(props) {
                                     <ListItemIcon>
                                         <PaymentsIcon />
                                     </ListItemIcon>
-                                    <ListItemText>Payment</ListItemText>
+                                    <ListItemText>Pay</ListItemText>
                                 </ListItem>
                             </Link>
 
@@ -172,7 +174,7 @@ function Dashboard(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Responsive drawer
+                        Dashboard
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -217,26 +219,28 @@ function Dashboard(props) {
 
                 <Switch>
                     <Route exact path={path}>
-                        <MyOrder></MyOrder>
+                        {
+                            admin ? <ManageOrder></ManageOrder> : <MyOrder></MyOrder>
+                        }
                     </Route>
                     <Route path={`${path}/payment`}>
                         <Payment></Payment>
                     </Route>
                     <Route path={`${path}/reviews`}>
-
+                        <AddReview></AddReview>
                     </Route>
-                    <Route path={`${path}/manageAllOrders`}>
+                    <AdminRoute path={`${path}/manageAllOrders`}>
                         <ManageOrder></ManageOrder>
-                    </Route>
-                    <Route path={`${path}/addProduct`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/addProduct`}>
                         <AddProduct></AddProduct>
-                    </Route>
-                    <Route path={`${path}/manageProducts`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageProducts`}>
                         <ManageProducts></ManageProducts>
-                    </Route>
-                    <Route path={`${path}/makeAdmin`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
-                    </Route>
+                    </AdminRoute>
                 </Switch>
             </Box>
         </Box>

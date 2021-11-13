@@ -4,7 +4,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
-    const { user, googleSignIn, emailSignIn, error } = useAuth();
+    const { googleSignIn, emailSignIn, error } = useAuth();
     const [userData, setUserData] = useState({});
     const history = useHistory();
     const location = useLocation();
@@ -32,8 +32,12 @@ const Login = () => {
     return (
         <Box height="100vh" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Box width="400px" style={{ backgroundColor: 'white', textAlign: 'center' }}>
-                <Typography align="center" variant="h6">
-                    LOGIN {user?.email} {user?.displayName}
+
+                <Typography sx={{ marginBottom: 2, fontWeight: 'bold' }} align="center" variant="h5">
+                    LOGIN
+                </Typography>
+                <Typography color="#FFB800" sx={{ marginBottom: 2, fontWeight: 'bold' }} align="center" variant="h5">
+                    MOUNTAIN BIKE
                 </Typography>
                 <form onSubmit={handleEmailSignIN}>
                     <TextField
@@ -59,7 +63,7 @@ const Login = () => {
                         variant="filled"
                     />
                     {error && <Alert severity="error">{error}</Alert>}
-                    <Button size='large' sx={{ marginTop: 2 }} type="submit" variant="contained">Log In</Button>
+                    <Button size='large' sx={{ marginTop: 2, paddingLeft: '30%', paddingRight: '30%' }} type="submit" variant="contained">Log In</Button>
                 </form>
 
                 <Link style={{ margin: '10px', display: 'inline-block' }} to='/register'><Typography variant="body2">Have no Account? Please Register</Typography></Link>

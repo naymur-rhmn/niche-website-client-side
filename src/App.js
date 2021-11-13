@@ -12,6 +12,7 @@ import AuthProvider from './pages/context/AuthProvider';
 import Order from './pages/Order/Order/Order';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import NotFound from './pages/NotFound/NotFound';
 
 
 
@@ -40,6 +41,9 @@ function App() {
           </Route>
           <Route path="/register">
             <Register></Register>
+          </Route>
+          <Route path="*">
+            <NotFound></NotFound>
           </Route>
         </Switch>
       </Router>

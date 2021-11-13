@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
-    const { user, googleSignIn, signUpUsingEmail, error } = useAuth();
+    const { googleSignIn, signUpUsingEmail, error } = useAuth();
     const [userData, setUserData] = useState({});
     const history = useHistory();
 
@@ -34,8 +34,11 @@ const Register = () => {
     return (
         <Box height="100vh" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Box width="400px" style={{ backgroundColor: 'white', textAlign: 'center' }}>
-                <Typography align="center" variant="h6">
+                <Typography sx={{ marginBottom: 2, fontWeight: 'bold' }} align="center" variant="h5">
                     REGISTER
+                </Typography>
+                <Typography color="#FFB800" sx={{ marginBottom: 2, fontWeight: 'bold' }} align="center" variant="h5">
+                    MOUNTAIN BIKE
                 </Typography>
                 <form onSubmit={handleEmailRegister}>
                     <TextField
@@ -87,7 +90,7 @@ const Register = () => {
                         required
                     />
                     {error && <Typography align='center' color="red">{error}</Typography>}
-                    <Button size='large' sx={{ marginTop: 2 }} type="submit" variant="contained">Register</Button>
+                    <Button size='large' sx={{ marginTop: 2, paddingLeft: '30%', paddingRight: '30%' }} type="submit" variant="contained">Register</Button>
                 </form>
                 <Link style={{ margin: '10px', display: 'inline-block' }} to='/login'><Typography variant="body2">Already a User? Please Login</Typography></Link>
                 <Divider sx={{ width: '50%', margin: '0 auto', marginBottom: '2px' }} />
